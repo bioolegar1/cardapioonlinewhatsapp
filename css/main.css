@@ -19,7 +19,7 @@
     --color-white: #fff;
     --color-red: #e74c3c;
     --color-green: #2ecc71;
-    --color-seaparte:#cccccc;
+    --color-separte:#cccccc;
 }
 
 
@@ -424,4 +424,229 @@ padding-top: 0px !important;
     display: flex;
     justify-content: center;
     align-items: end;
+}
+
+
+
+.reserva {
+    padding-top: 100px;
+    padding-bottom: 150px;
+}
+
+.card-secondary {
+    background-color: var(--color-secundary);
+    border-radius: 70px;
+    padding: 90px;
+}
+
+.card-reserva {
+    height: 320px;
+    width: 320px;
+    border-radius: 120px;
+    background-color: var(--color-white);
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+
+
+.img-reserva {
+    width: 100% !important;
+}
+
+
+footer {
+    background-color: var(--color-secundary);
+    margin-top: 100px;
+}
+
+.logo-footer {
+    display: flex;
+    width: 150px;
+}
+
+
+
+
+.container-logo-footer {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+
+.container-texto-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-redes-footer {
+    display: flex;
+    justify-content: top;
+    align-items: center;
+}
+
+
+.modal-full {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 50px;
+    background-color: var(--color-white);
+    z-index: 9990;
+    overflow-x: hidden;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.m-heder {
+    padding-bottom: 20px;
+}
+
+.m-body {
+    flex: 1;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.m-body::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+
+.m-body::-webkit-scrollbar-thumb {
+    background-color: var(--color-white);
+}
+
+.m-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.etapas {
+    display: flex;
+}
+
+.etapa {
+    width: 35px;
+    height: 35px;
+    background-color: var(--color-white);
+    border-radius: 50px;
+    box-shadow:0px 10px 15px -3px rgba(0,0,0,0.2) ;
+    color: var(--color-black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+
+.etapa::before{
+    content: '';
+    width: 20px ;
+    background-color: var(--color-separte);
+    position: absolute;
+    height: 2px;
+    margin-left: 55px;
+}
+
+.etapa:last-child::before {
+    content: none;
+}
+
+
+.etapa.active, .etapa.active::before {
+    background-color: var(--color-primary);
+}
+
+
+.title-carrinho {
+    font-size: 20px;
+    color: var(--color-black);
+}
+
+
+.modal-full .item-carrinho {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--color-separte);
+
+}
+
+.modal-full .item-carrinho:last-child {
+    border-bottom: none;
+}
+
+.modal-full .img-produto img{
+    width: 100px;
+    border-radius: 11px;
+}
+
+.modal-full .title-produto {
+    color: var(--color-black);
+    font: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.modal-full .price-produto {
+    color: var(--color-primary);
+    font-size: 24px;
+    margin-bottom: 0;
+}
+
+
+
+.modal-full .dados-produto {
+    flex: 1;
+    padding-left: 25px;
+    padding-right: 25px;    
+}
+
+
+.modal-full .add-carrinho {
+    display: flex;
+    text-align: center;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-remove {
+    border: 2px solid var(--color-red);
+    font-size: 1rem;
+    padding: 4px 10px;
+    border-radius: 10px;
+    color: var(--color-white);
+    background-color: var(--color-red);
+    margin-left: 15px;
+}
+
+
+.container-total {
+    padding-top: 20px;
+    border-top: 1px solid var(--color-separte);
+}
+
+.container-total .texto-entrega {
+    color: var(--color-separte);
+}
+
+.container-total .texto-total{
+    color: var(--color-black);
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+.container-total .valor-total {
+    color: var(--color-primary);
+    font-size: 1.6rem;
 }
