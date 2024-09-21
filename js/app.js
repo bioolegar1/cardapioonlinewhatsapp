@@ -29,7 +29,7 @@ cardapio.metodos ={
                 .replace(/\${img}/g, e.img )
                 .replace(/\${name}/g, e.name)
                 .replace(/\${price}/g, e.price.toFixed(2) .replace('.',',')
-                 .replace(/\${id}/g, e.id ))
+                .replace(/\${id}/g, e.id ))
             //botão ver mais foi clicado (12 itens)
             if(vermais && i >= 8 && i < 12) {
                 $("#itensCardapio").append(temp)
@@ -69,7 +69,6 @@ cardapio.metodos ={
     aumentarQuantidade: (id) => {
         let qntdAtual = parseInt($("qntd-" + id).text());
         $("qntd-" + id).text(qntdAtual - 1)
-
     }
 
 }
