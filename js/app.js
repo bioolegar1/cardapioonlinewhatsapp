@@ -4,6 +4,8 @@ $(document).ready(function () {
 
 var cardapio = {};
 
+var MEU_CARRINHO = [];
+
 cardapio.eventos = {
     init: () => {
         cardapio.metodos.obterItensCardapio();
@@ -66,6 +68,33 @@ cardapio.metodos = {
         let qntdAtual = parseInt($("#qntd-" + id).text());
         $("#qntd-" + id).text(qntdAtual + 1);
     },
+
+    //adicionar ao carrinho o item do cardapio
+    adicionarAaoCarrinho: (id) => {
+        let qntdAtual = parseInt($("#qntd-" + id).text());
+
+        if(qntdAtual > 0) {
+
+            //obter a caetoria ativa
+            var categoria =  $(".container-menu a.active").attr("id").split("menu-")[1];
+
+            //obtem a lista de itens
+            let filtro = MENU[categoria];
+
+            //obtem o item
+            let item = $.grep(filtro, (e, i) => {return e.id == id});
+
+            if(item.length > 0) {
+
+                item[0].qntd = qntdAtual;
+                MEU_CARRINHO.push(item[0]);
+
+            }
+
+        }
+    }
+
+
 };
 
 cardapio.templates = {
@@ -86,11 +115,11 @@ cardapio.templates = {
                         <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidade('\${id}')"> <i class="fas fa-minus"></i></span>
                         <span class="add-numero-itens" id="qntd-\${id}">0</span>
                         <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidade('\${id}')"><i class="fas fa-plus"></i></span>
-                        <span class="btn btn-add"><i class="fa fa-shopping-bag"></i></span>
+                        <span class="btn btn-add"  onclick="cardapio.metodos.adicionarAaoCarrinho('\${id}')"><i class="fa fa-shopping-bag"></i></span>
                     </div>
                 </div>
             </div>
     
         </div>
-`,
+`
 };
