@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/fontawesome.css">
     <link rel="stylesheet" href="./css/animate.css">
     <link rel="stylesheet" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/responsive.css" />
+<!--    <link rel="stylesheet" href="./css/responsive.css" />-->
 
 </head>
 
@@ -435,18 +435,19 @@
                 Fechar
             </a>
             <div class="etapas">
-                <div class="etapa etapa1 active">1</div>
-                <div class="etapa etapa2">2</div>
-                <div class="etapa etapa3">3</div>
+                <div onclick="cardapio.metodos.carregarEtapa(1)" class="etapa etapa1 active"></div>
+                <div onclick="cardapio.metodos.carregarEtapa(2)" class="etapa etapa2">2</div>
+                <div onclick="cardapio.metodos.carregarEtapa(3)" class="etapa etapa3">3</div>
             </div>
-            <p class="title-carrinho mt-4"><b id="lblTituloEtapa">Seu carrinho:</b></p>
+            <p class="title-carrinho mt-4">
+                <b id="lblTituloEtapa">Seu carrinho:</b></p>
         </div>
     </div>
 
     <div class="m-body">
         <div class="container">
 
-            <div id="itensCarrinho" class="row mr-0 ml-0 animated fadeIn hidden">
+            <div id="itensCarrinho" class="row mr-0 ml-0 animated fadeIn hidden ">
 
             </div>
 
@@ -537,7 +538,7 @@
 
             </div>
 
-            <div id="resumoCarrinho" class="row mr-0 ml-0 animated fadeIn hidden">
+            <div id="resumoCarrinho" class="row mr-0 ml-0 animated fadeIn hidden ">
 
                 <div class="col-12">
                     <p class="title-carrinho mt-4"><b>Itens do pedido:</b></p>
@@ -589,11 +590,11 @@
             </div>
 
             <a class="btn btn-yellow float-right hidden" id="btnEtapaPedido"
-               onclick="cardapio.metodos.carregarEndereco()">
+               onclick="cardapio.metodos.carregarEtapa(2)">
                 Continuar
             </a>
             <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco"
-               onclick="cardapio.metodos.resumoPedido()">
+               onclick="cardapio.metodos.carregarEtapa(3)">
                 Revisar pedido
             </a>
             <a href="#" class="btn btn-yellow float-right" id="btnEtapaResumo" target="_blank">
@@ -616,7 +617,7 @@
 <script type="text/javascript" src="./js/dados.js"></script>
 <script type="text/javascript" src="./js/app.js"></script>
 
-<script>new WOW().init();</script>
+<!--<script>new WOW().init();</script>-->
 
 </body>
 

@@ -790,7 +790,7 @@ select.form-control {
     border-radius: 50px;
     right: -5px;
     top: -5px;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: bold;
     display: flex;
     justify-content: center;
@@ -801,8 +801,8 @@ a.botao-carrinho {
     position: fixed;
     right: 30px;
     bottom: 30px;
-    height: 50px;
-    width: 50px;
+    height: 70px;
+    width: 70px;
     background: var(--color-primary);
     display: flex;
     justify-content: center;
