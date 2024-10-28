@@ -435,7 +435,7 @@
                 Fechar
             </a>
             <div class="etapas">
-                <div onclick="cardapio.metodos.carregarEtapa(1)" class="etapa etapa1 active"></div>
+                <div onclick="cardapio.metodos.carregarEtapa(1)" class="etapa etapa1 active">1</div>
                 <div onclick="cardapio.metodos.carregarEtapa(2)" class="etapa etapa2">2</div>
                 <div onclick="cardapio.metodos.carregarEtapa(3)" class="etapa etapa3">3</div>
             </div>
@@ -590,11 +590,11 @@
             </div>
 
             <a class="btn btn-yellow float-right hidden" id="btnEtapaPedido"
-               onclick="cardapio.metodos.carregarEtapa(2)">
+               onclick="cardapio.metodos.carregarEndereco()">
                 Continuar
             </a>
             <a class="btn btn-yellow float-right hidden" id="btnEtapaEndereco"
-               onclick="cardapio.metodos.carregarEtapa(3)">
+               onclick="cardapio.metodos.resumoPedido()">
                 Revisar pedido
             </a>
             <a href="#" class="btn btn-yellow float-right" id="btnEtapaResumo" target="_blank">
