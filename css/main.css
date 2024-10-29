@@ -250,7 +250,8 @@ a.nav-link {
 }
 
 .card-item {
-    height: 360px;
+    height: 500px;
+    width: 260px;
 }
 
 .card-item .img-produto img {
@@ -263,8 +264,13 @@ a.nav-link {
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    height: 40px;
+    height: 80px;
     margin-bottom: 0;
+}
+
+.card-item .dsc-produto {
+    font-size: 0.85rem;
+    text-align: justify-all;
 }
 
 .card-item .price-produto {
@@ -278,10 +284,10 @@ a.nav-link {
 
 .card-item .add-carrinho {
     display: none;
-    text-align: center;
+    text-align: justify-all;
     height: 30px;
     justify-content: center;
-    align-items: center;
+    align-items: end;
 }
 
 .btn-menos {
@@ -342,6 +348,7 @@ a.nav-link {
 
 .card-item:hover .add-carrinho, .card-item.active .add-carrinho{
     display: flex;
+
 }
 
 .card-item:hover .price-produto, .card-item.active .price-produto {

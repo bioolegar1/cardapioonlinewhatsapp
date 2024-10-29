@@ -14,11 +14,18 @@
 
     var CELULAR_EMPRESA = '5562982892166'
 
+    var FACE_EMPRESA = `https://www.facebook.com/vandersonhsantos`
+
+    var INSTA_EMPRESA = `https://www.instagram.com/biozeera/`
+
+
     cardapio.eventos = {
         init: () => {
             cardapio.metodos.obterItensCardapio();
             cardapio.metodos.carregarBotaoLigar();
             cardapio.metodos.carregarBotaoReserva();
+            cardapio.metodos.socialTopo();
+            cardapio.metodos.socialRodape();
         },
     };
 
@@ -37,6 +44,7 @@
                 let temp = cardapio.templates.item
                     .replace(/\${img}/g, e.img)
                     .replace(/\${name}/g, e.name)
+                    .replace(/\${dsc}/g, e.dsc)
                     .replace(/\${price}/g, e.price.toFixed(2).replace(".", ","))
                     .replace(/\${id}/g, e.id);
 
@@ -519,9 +527,56 @@
         //carrega o botao de ligar
         carregarBotaoLigar: () => {
 
-
             $("#btnLigar").attr('href', `tel:${CELULAR_EMPRESA}`);
+
         },
+
+
+        //abre o depoimento
+        abrirDepoimento: (depoimento) => {
+
+            $("#depoimento-1").addClass('hidden');
+            $("#depoimento-2").addClass('hidden');
+            $("#depoimento-3").addClass('hidden');
+
+            $("#btnDepoimento-1").removeClass('active');
+            $("#btnDepoimento-2").removeClass('active');
+            $("#btnDepoimento-3").removeClass('active');
+
+
+            $("#depoimento-" + depoimento).removeClass('hidden');
+            $("#btnDepoimento-" + depoimento).addClass('active');
+        },
+
+
+        //carrega os links das redos sociais que estão no topo do site
+        socialTopo: () => {
+
+            $("#btnFacebook").attr('href', `${FACE_EMPRESA}`);
+
+            $("#btnInstagram").attr('href', `${INSTA_EMPRESA}`);
+
+            let URL = `https://wa.me/${CELULAR_EMPRESA}?text=Gostaria de fazer um pedido!`;
+
+            $("#btnWhatsapp").attr("href", URL);
+
+
+        },
+
+
+        //carrega os links das redos sociais que estão no rodapé do site
+        socialRodape: () => {
+
+            $("#btnFacebook2").attr('href', `${FACE_EMPRESA}`);
+
+            $("#btnInstagram2").attr('href', `${INSTA_EMPRESA}`);
+
+            let URL = `https://wa.me/${CELULAR_EMPRESA}?text=Gostaria de fazer um pedido!`;
+
+            $("#btnWhatsapp2").attr("href", URL);
+        },
+
+
 
 
 
@@ -562,8 +617,13 @@
                         <p class="title-produto text-center mt-4">
                             <b>\${name}</b>
                         </p>
+                        <div>
+                            <p class="dsc-produto text-center mt-2">
+                             <b>\${dsc}</b>
+                            </p>
+                         </div>
                         <p class="price-produto text-center">
-                            <b>R$ \${price}</b>
+                            <b>\${price}</b>
                         </p>
                         <div class="add-carrinho">
                             <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidade('\${id}')"> <i class="fas fa-minus"></i></span>
