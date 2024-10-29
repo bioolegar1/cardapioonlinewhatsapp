@@ -17,6 +17,8 @@
     cardapio.eventos = {
         init: () => {
             cardapio.metodos.obterItensCardapio();
+            cardapio.metodos.carregarBotaoLigar();
+            cardapio.metodos.carregarBotaoReserva();
         },
     };
 
@@ -499,6 +501,26 @@
 
                 })
             }
+        },
+
+
+        //carrega o link do botão de fazer reserva
+        carregarBotaoReserva: () => {
+
+            var texto = 'Olá! gostaria de fazer uma *reserva*';
+
+            let encode = encodeURI(texto);
+            let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+
+            $("#btnReserva").attr("href", URL);
+
+        },
+
+        //carrega o botao de ligar
+        carregarBotaoLigar: () => {
+
+
+            $("#btnLigar").attr('href', `tel:${CELULAR_EMPRESA}`);
         },
 
 
